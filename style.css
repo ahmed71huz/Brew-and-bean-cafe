@@ -1,0 +1,17 @@
+
+body {
+    text-align: center;
+
+
+
+}
+img {
+    width: 150px;
+    height: 150px;
+}
+button{
+    border: 0;
+    background-color: aqua;
+    margin: 10px;
+    
+}
