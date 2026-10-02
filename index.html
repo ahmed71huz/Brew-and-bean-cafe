@@ -24,7 +24,7 @@
         <section id="hero-el">
             <h1>Welcome to Brew & Bean Cafe, Fresh coffee</h1>
             <p>Enjoy the finest coffee in a Al ahsa Al-hufuf.</p>
-            <a href="#booking-el">Book a Table</a>
+            <a href="#booking-el" class="btn">Book a Table</a>
             <!-- <a href="#make-it">Make coffee to go </a> -->
         </section>
         <section id="about-el">
@@ -109,12 +109,16 @@
                 <input type="text" id="name" name="name" required>
                 <label for="tel">Phone Number: </label>
                 <input type="tel" id="tel" name="tel" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
                 <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required>
                 <label for="time">Time:</label>
                 <input type="time" id="time" name="time" required>
                 <label for="guests">Number of Guests:</label>
                 <input type="number" id="guests" name="guests" min="1" max="10" required>
+                <label for="notes">Additional Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
                 <button type="submit">Book Now</button>
             </form>
         </section>
