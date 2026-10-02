@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Brew & Bean Cafe</title>
 </head>
+
 <body>
     <header>
         <p class="logo">Brew & Bean Cafe</p>
-    <nav>
-        <ul>
-            <li><a href="#about-el">about</a></li>
-            <li><a href="#menu-el">menu</a></li>
-            <li><a href="#booking-el">booking</a></li>
-            <li><a href="#hero-el">Home</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="#about-el">about</a></li>
+                <li><a href="#menu-el">menu</a></li>
+                <li><a href="#booking-el">booking</a></li>
+                <li><a href="#hero-el">Home</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section id="hero-el">
@@ -33,62 +35,72 @@
         </section>
         <section id="menu-el">
             <h2>Menu</h2>
-            <article>
-                <img src="images/v60-cofe.jpg" alt="v60 pour-over coffee">
-                <h3>V60</h3>
-                <p class="description">Hand-poured specialty coffee with a clean, fruity taste.</p>
-                <button>cold</button>
-                <button>hot </button>
-                <p>The Price is SR 12</p>
-            </article>
-            <article>
-                <img src="images/flat-white.jpg" alt="flat white with beautiful art">
-                <h3>Flat White</h3>
-                <p class="description">Double espresso with silky steamed milk and latte art.</p>
-                <button>double Espresso </button>
-                <p>The Price is SR 18</p>
-                
-            </article>
-            <article>
-                <img src="images/latte.jpg" alt="latte with latte art">
-                <h3>Latte</h3>
-                <p class="description">Smooth espresso with plenty of creamy milk.</p>
-                <button>cold</button>
-                <button>hot </button>
-                <p>The Price is SR 20</p>
-            </article>
-            <article>
-                <img src="images/morning.jpg" alt="morning coffee ">
-                <h3>Morning Coffee</h3>
-                <p class="description">Our daily house brew, the perfect start to your day.</p>
-                <button>cold</button>
-                <button>hot </button>
-                <p>The Price is SR 9</p>
-            </article>
-            <article>
-                <img src="images/black-hot.jpg" alt="black filter coffee ">
-                <h3>Black Hot</h3>
-                <p class="description">Freshly brewed filter coffee, served black and bold.</p>
-                <p>The Price is SR 11</p>
-            </article>
-            <article>
-                <img src="images/hot-coco.jpg" alt="hot cocoa ">
-                <h3>Hot Cocoa</h3>
-                <p class="description">Rich chocolate with warm milk, sweet and comforting.</p>
-                <p>The Price is SR 19</p>
-            </article>
-            <article>
-                <img src="images/carck.jpg" alt="karak tea ">
-                <h3>Karak Tea</h3>
-                <p class="description">Strong spiced tea with cardamom and evaporated milk.</p>
-                <p>The Price is SR 11</p>
-            </article>
-            <article>
-                <img src="images/cold-pros.jpg" alt="cold Brew">
-                <h3>Cold Brew</h3>
-                <p class="description">Coffee slow-steeped for 18 hours, smooth and refreshing.</p>
-                <p>The Price is SR 22</p>
-            </article>
+            <div class="menu-grid">
+                <article>
+                    <img src="images/v60-cofe.jpg" alt="v60 pour-over coffee">
+                    <h3>V60</h3>
+                    <p class="description">Hand-poured specialty coffee with a clean, fruity taste.</p>
+                    <div class="tags">
+                        <span class="tag">Cold</span>
+                        <span class="tag">Hot</span>
+                    </div>
+                    <p class="price"> SR 12</p>
+                </article>
+                <article>
+                    <img src="images/flat-white.jpg" alt="flat white with beautiful art">
+                    <h3>Flat White</h3>
+                    <p class="description">Double espresso with silky steamed milk and latte art.</p>
+                    <div class="tags">
+                        <span class="tag">Double Espresso</span>
+                    </div>
+                    <p class="price"> SR 18</p>
+
+                </article>
+                <article>
+                    <img src="images/latte.jpg" alt="latte with latte art">
+                    <h3>Latte</h3>
+                    <p class="description">Smooth espresso with plenty of creamy milk.</p>
+                    <div class="tags">
+                        <span class="tag">Cold</span>
+                        <span class="tag">Hot</span>
+                    </div>
+                    <p class="price"> SR 20</p>
+                </article>
+                <article>
+                    <img src="images/morning.jpg" alt="morning coffee ">
+                    <h3>Morning Coffee</h3>
+                    <p class="description">Our daily house brew, the perfect start to your day.</p>
+                    <div class="tags">
+                        <span class="tag">Cold</span>
+                        <span class="tag">Hot</span>
+                    </div>
+                    <p class="price"> SR 9</p>
+                </article>
+                <article>
+                    <img src="images/black-hot.jpg" alt="black filter coffee ">
+                    <h3>Black Hot</h3>
+                    <p class="description">Freshly brewed filter coffee, served black and bold.</p>
+                    <p class="price"> SR 11</p>
+                </article>
+                <article>
+                    <img src="images/hot-coco.jpg" alt="hot cocoa ">
+                    <h3>Hot Cocoa</h3>
+                    <p class="description">Rich chocolate with warm milk, sweet and comforting.</p>
+                    <p class="price"> SR 19</p>
+                </article>
+                <article>
+                    <img src="images/carck.jpg" alt="karak tea ">
+                    <h3>Karak Tea</h3>
+                    <p class="description">Strong spiced tea with cardamom and evaporated milk.</p>
+                    <p class="price"> SR 11</p>
+                </article>
+                <article>
+                    <img src="images/cold-pros.jpg" alt="cold Brew">
+                    <h3>Cold Brew</h3>
+                    <p class="description">Coffee slow-steeped for 18 hours, smooth and refreshing.</p>
+                    <p class="price"> SR 22</p>
+                </article>
+            </div>
         </section>
         <section id="booking-el">
             <h2>Book a Table</h2>
@@ -127,4 +139,5 @@
     </footer>
     <script src="index.js"></script>
 </body>
+
 </html>
