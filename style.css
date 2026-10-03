@@ -10,14 +10,16 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
 }
-
 header {
+    background-color: var(--color-primary);
+    color: white;
+}
+nav {
     display: flex;
+    flex-wrap: wrap;               /* lets the menu drop to its own line */
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: var(--color-primary);
-    color: white;
 }
 .logo {
     font-size: 1.5rem;
@@ -25,33 +27,51 @@ header {
     margin: 0;
     color: rgba(255,255, 255, 0.7);
 }
-nav ul {
-    display: none;
-    gap: 0.5rem;
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
-@media (min-width:768px){
-    nav ul {
-        display: flex;
-    }
+
+/* Mobile menu: closed by default */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;          /* closed = 0 height */
+    overflow: hidden;       /* hide the links while closed */
+    transition: max-height 0.3s ease;
+}
+nav ul.open {
+    max-height: 300px;      /* open = enough room for 4 links */
+    margin-top: 0.5rem;
+}
+nav li {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+nav ul a {
+    display: block;         /* the whole row is clickable */
+}
+
+/* Desktop: links always visible, no button */
+@media (min-width: 768px) {
     .menu-btn {
         display: none;
     }
-}
-nav ul.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: var(--color-primary);
-    width: 200px;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+    nav ul {
+        flex-direction: row;
+        width: auto;
+        max-height: none;
+        gap: 1rem;
+    }
+    nav li {
+        border-top: none;
+    }
 }
 #hero-el {
     background-image:
@@ -62,7 +82,8 @@ nav ul {
     color: white;
     min-height: 60vh;
     padding: 2rem;
-    border-radius: 12px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: center;

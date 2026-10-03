@@ -1,5 +1,9 @@
-let u = document.querySelector(".menu-btn");
-let v = document.querySelector("nav ul");
-u.addEventListener("click", () => {
-    v.classList.toggle("open");
+let menuBtn = document.querySelector(".menu-btn");
+let navList = document.querySelector("nav ul");
+
+menuBtn.addEventListener("click", () => {
+    navList.classList.toggle("open");
+    menuBtn.textContent = navList.classList.contains("open") ? "✕" : "☰";
 });
+
+
