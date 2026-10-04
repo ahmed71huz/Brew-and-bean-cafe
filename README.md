@@ -13,6 +13,9 @@ table-booking form with real-time validation.
 - Mobile navigation menu
 - Booking form with custom validation and inline error messages
 - Success confirmation message
+- Smooth slide-down mobile menu (☰ / ✕)
+- Booking form checks: no past dates, only within opening hours (3 PM – 12 AM)
+- Full-width hero section
 
 ## Tech Stack
 HTML5 · CSS3 · Vanilla JavaScript · GitHub Pages
