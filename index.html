@@ -106,11 +106,11 @@
         </section>
         <section id="booking-el">
             <h2>Book a Table</h2>
-            <form>
+            <form id="booking-form">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required minlength="3" maxlength="50">
                 <label for="tel">Phone Number: </label>
-                <input type="tel" id="tel" name="tel" required>
+                <input type="tel" id="tel" name="tel" required minlength="10" maxlength="15" pattern="[0-9]{10,15}">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="date">Date:</label>
@@ -121,6 +121,7 @@
                 <input type="number" id="guests" name="guests" min="1" max="10" required>
                 <label for="notes">Additional Notes:</label>
                 <textarea id="notes" name="notes"></textarea>
+                <p class="form-msg" id="form-msg"></p>
                 <button type="submit">Book Now</button>
             </form>
         </section>
