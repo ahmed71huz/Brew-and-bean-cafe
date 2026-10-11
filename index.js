@@ -34,3 +34,11 @@ form.addEventListener("submit", function (event) {
     formMsg.style.color = "green";
     form.reset();
 });
+
+const addEl = document.querySelectorAll(".add-btn")
+
+addEl.forEach(btn => {
+    btn.addEventListener("click", () => {
+        console.log(btn.dataset.name, btn.dataset.price)
+    })
+})
