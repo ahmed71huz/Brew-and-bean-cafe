@@ -36,9 +36,11 @@ form.addEventListener("submit", function (event) {
 });
 
 const addEl = document.querySelectorAll(".add-btn")
+let cart = [];
 
 addEl.forEach(btn => {
     btn.addEventListener("click", () => {
-        console.log(btn.dataset.name, btn.dataset.price)
+        cart.push( {name: btn.dataset.name, price: Number(btn.dataset.price ), qty: 1})
+        console.log(cart)
     })
 })
