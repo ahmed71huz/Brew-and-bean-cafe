@@ -59,7 +59,21 @@ function renderCart() {
     cart.forEach((item) => {
         let li = document.createElement("li");
         li.textContent = `${item.name} - SR ${item.price} - ${item.qty}`;
-        itemList.appendChild(li)
+        const plusBtn = document.createElement("button");
+        plusBtn.textContent = "+"
+        plusBtn.addEventListener("click", () => {
+            item.qty += 1;
+            renderCart()
+        })
+        const negBtn = document.createElement("button");
+        negBtn.textContent = "-";
+        negBtn.addEventListener("click", () => {
+            item.qty -= 1;
+            renderCart()
+        })
+        li.appendChild(negBtn);
+        li.appendChild(plusBtn);
+        itemList.appendChild(li);
 
     })
     const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
