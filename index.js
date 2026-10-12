@@ -18,7 +18,7 @@ form.addEventListener("submit", function (event) {
     const today = new Date().toISOString().slice(0, 10);
     const openingTime = "15:00";
     const closingTime = "23:59";
-
+    
     if (date < today) {
         formMsg.textContent = "Please choose a date from today onward.";
         formMsg.style.color = "red";
@@ -29,7 +29,7 @@ form.addEventListener("submit", function (event) {
         formMsg.style.color = "red";
         return;
     }
-
+    
     formMsg.textContent = `Thanks ${name}! Your table for ${guests} is booked on ${date} at ${time}.`;
     formMsg.style.color = "green";
     form.reset();
@@ -49,7 +49,6 @@ addEl.forEach(btn => {
             cart.push({ name: btn.dataset.name, price: Number(btn.dataset.price), qty: 1 })
         }
         renderCart()
-        console.log(cart)
     })
 })
 
@@ -73,24 +72,26 @@ function renderCart() {
                 cart = cart.filter(i => i !==item);
             }
             renderCart()
-            })
-        const Remove = document.createElement("button");
-        Remove.textContent = "❌";
-        Remove.addEventListener("click", () => {
+        })
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "❌";
+        removeBtn.classList.add("remove-btn")
+        removeBtn.setAttribute("aria-label", `Remove ${item.name}`);
+        removeBtn.addEventListener("click", () => {
             cart = cart.filter(i => i !== item);
             renderCart()
         })
-        li.appendChild(Remove);
         li.appendChild(negBtn);
         li.appendChild(plusBtn);
+        li.appendChild(removeBtn);
         itemList.appendChild(li);
-
+        
     })
     const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
     let cartTotal = document.querySelector("#cart-total")
-    cartTotal.textContent = `Total: SR ${total}`
+    cartTotal.innerHTML = `Total: <span>SR ${total}</span>`;
     localStorage.setItem("cart", JSON.stringify(cart));
-
-
+    
+    
 }
 renderCart()

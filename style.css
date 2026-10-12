@@ -159,7 +159,50 @@ main {
     transform: translateY(-5px);
 
 }
-
+#cart-list button{
+    display: grid;
+    place-items: center;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 15%;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+#cart-list {
+    list-style: none;
+    padding: 0;
+}
+#cart-list li {
+    display : flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #2b2b2b;
+    font-size: large;
+}
+#cart-list .remove-btn:hover {
+    background-color: #fde2e2;
+}
+.remove-btn{
+    margin-left: auto;
+}
+#cart-el {
+    max-width: 480px ;
+    background: white;
+    padding: 16px;
+    border-radius: 15px;
+}
+#cart-total {
+  display: flex;
+  justify-content: space-between;  
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);             
+  padding-top: 12px;
+  margin-top: 8px;
+}
 /* Hot / Cold tags */
 .tags {
     display: flex;
