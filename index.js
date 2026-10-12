@@ -69,8 +69,18 @@ function renderCart() {
         negBtn.textContent = "-";
         negBtn.addEventListener("click", () => {
             item.qty -= 1;
+            if (item.qty === 0){
+                cart = cart.filter(i => i !==item);
+            }
+            renderCart()
+            })
+        const Remove = document.createElement("button");
+        Remove.textContent = "❌";
+        Remove.addEventListener("click", () => {
+            cart = cart.filter(i => i !== item);
             renderCart()
         })
+        li.appendChild(Remove);
         li.appendChild(negBtn);
         li.appendChild(plusBtn);
         itemList.appendChild(li);
