@@ -36,7 +36,8 @@ form.addEventListener("submit", function (event) {
 });
 
 const addEl = document.querySelectorAll(".add-btn")
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 
 addEl.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -49,7 +50,6 @@ addEl.forEach(btn => {
         }
         renderCart()
         console.log(cart)
-        
     })
 })
 
@@ -65,6 +65,7 @@ function renderCart() {
     const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
     let cartTotal = document.querySelector("#cart-total")
     cartTotal.textContent = `Total: SR ${total}`
+    localStorage.setItem("cart", JSON.stringify(cart));
 
 
 }
