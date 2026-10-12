@@ -55,4 +55,10 @@ function renderCart(){
         itemList.appendChild(li)
 
     })
+    const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
+    let cartTotal = document.querySelector("#cart-total")
+    cartTotal.textContent = `Total: SR ${total}`              
+
+    
 }
+renderCart()
