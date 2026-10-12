@@ -41,6 +41,18 @@ let cart = [];
 addEl.forEach(btn => {
     btn.addEventListener("click", () => {
         cart.push( {name: btn.dataset.name, price: Number(btn.dataset.price ), qty: 1})
+        renderCart()
         console.log(cart)
     })
 })
+
+function renderCart(){
+    const itemList = document.querySelector("#cart-list")
+    itemList.innerHTML =""
+    cart.forEach((item) =>{
+        let li = document.createElement("li");
+        li.textContent = `${item.name} - SR ${item.price} - ${item.qty}`;
+        itemList.appendChild(li)
+
+    })
+}
