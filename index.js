@@ -40,16 +40,23 @@ let cart = [];
 
 addEl.forEach(btn => {
     btn.addEventListener("click", () => {
-        cart.push( {name: btn.dataset.name, price: Number(btn.dataset.price ), qty: 1})
+        let existing = cart.find(U => U.name === btn.dataset.name)
+        if (existing) {
+            existing.qty += 1
+        }
+        else {
+            cart.push({ name: btn.dataset.name, price: Number(btn.dataset.price), qty: 1 })
+        }
         renderCart()
         console.log(cart)
+        
     })
 })
 
-function renderCart(){
+function renderCart() {
     const itemList = document.querySelector("#cart-list")
-    itemList.innerHTML =""
-    cart.forEach((item) =>{
+    itemList.innerHTML = ""
+    cart.forEach((item) => {
         let li = document.createElement("li");
         li.textContent = `${item.name} - SR ${item.price} - ${item.qty}`;
         itemList.appendChild(li)
@@ -57,8 +64,8 @@ function renderCart(){
     })
     const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
     let cartTotal = document.querySelector("#cart-total")
-    cartTotal.textContent = `Total: SR ${total}`              
+    cartTotal.textContent = `Total: SR ${total}`
 
-    
+
 }
 renderCart()
