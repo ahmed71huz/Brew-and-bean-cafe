@@ -1,6 +1,7 @@
 let menuBtn = document.querySelector(".menu-btn");
 let navList = document.querySelector("nav ul");
 const cartCount = document.querySelector("#cart-count")
+const checkoutBtn = document.querySelector("#checkout-btn")
 menuBtn.addEventListener("click", () => {
     navList.classList.toggle("open");
     menuBtn.textContent = navList.classList.contains("open") ? "✕" : "☰";
@@ -54,6 +55,15 @@ addEl.forEach(btn => {
 function lineTotal(item) {
   return item.price * item.qty;
 }
+
+checkoutBtn.addEventListener("click", () => {
+    if (cart.length === 0){
+        console.log("Your cart is empty")
+        return;
+    }
+    const order = document.querySelector('input[name="order-type"]:checked').value
+    console.log(order)
+})
 
 function renderCart() {
     const itemList = document.querySelector("#cart-list")
