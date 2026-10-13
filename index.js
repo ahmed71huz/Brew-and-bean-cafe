@@ -51,13 +51,21 @@ addEl.forEach(btn => {
         renderCart()
     })
 })
+function lineTotal(item) {
+  return item.price * item.qty;
+}
 
 function renderCart() {
     const itemList = document.querySelector("#cart-list")
     itemList.innerHTML = ""
+    if (cart.length === 0){
+        let li = document.createElement("li")
+        li.textContent = "Your cart is empty ";
+        itemList.appendChild(li)
+    }
     cart.forEach((item) => {
         let li = document.createElement("li");
-        li.textContent = `${item.name} - SR ${item.price} - ${item.qty}`;
+        li.textContent = `${item.name} - SR ${item.price} × ${item.qty} = SR ${lineTotal(item)}`
         const plusBtn = document.createElement("button");
         plusBtn.textContent = "+"
         plusBtn.addEventListener("click", () => {
@@ -87,7 +95,7 @@ function renderCart() {
         itemList.appendChild(li);
         
     })
-    const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0)
+    const total = cart.reduce((acc, item) => acc + lineTotal(item), 0)
     let cartTotal = document.querySelector("#cart-total")
     cartTotal.innerHTML = `Total: <span>SR ${total}</span>`;
     localStorage.setItem("cart", JSON.stringify(cart));
