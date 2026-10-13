@@ -2,6 +2,7 @@ let menuBtn = document.querySelector(".menu-btn");
 let navList = document.querySelector("nav ul");
 const cartCount = document.querySelector("#cart-count")
 const checkoutBtn = document.querySelector("#checkout-btn")
+const msg = document.querySelector("#checkout-msg")
 menuBtn.addEventListener("click", () => {
     navList.classList.toggle("open");
     menuBtn.textContent = navList.classList.contains("open") ? "✕" : "☰";
@@ -55,14 +56,19 @@ addEl.forEach(btn => {
 function lineTotal(item) {
   return item.price * item.qty;
 }
+function getTotal() {
+    return cart.reduce((acc, item) => acc + lineTotal(item), 0)
+}
 
 checkoutBtn.addEventListener("click", () => {
     if (cart.length === 0){
-        console.log("Your cart is empty")
+        msg.textContent = "Your cart is empty"
         return;
     }
     const order = document.querySelector('input[name="order-type"]:checked').value
-    console.log(order)
+    msg.textContent = `Thank you! Your ${order} order (SR ${getTotal()}) has been placed.`
+    cart = []
+    renderCart()
 })
 
 function renderCart() {
@@ -107,9 +113,8 @@ function renderCart() {
         itemList.appendChild(li);
         
     })
-    const total = cart.reduce((acc, item) => acc + lineTotal(item), 0)
     let cartTotal = document.querySelector("#cart-total")
-    cartTotal.innerHTML = `Total: <span>SR ${total}</span>`;
+    cartTotal.innerHTML = `Total: <span>SR ${getTotal()}</span>`;
     localStorage.setItem("cart", JSON.stringify(cart));
     
     
