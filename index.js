@@ -1,6 +1,6 @@
 let menuBtn = document.querySelector(".menu-btn");
 let navList = document.querySelector("nav ul");
-
+const cartCount = document.querySelector("#cart-count")
 menuBtn.addEventListener("click", () => {
     navList.classList.toggle("open");
     menuBtn.textContent = navList.classList.contains("open") ? "✕" : "☰";
@@ -63,6 +63,8 @@ function renderCart() {
         li.textContent = "Your cart is empty ";
         itemList.appendChild(li)
     }
+    let count = cart.reduce((acc, item) => acc + item.qty, 0)
+    cartCount.textContent = count 
     cart.forEach((item) => {
         let li = document.createElement("li");
         li.textContent = `${item.name} - SR ${item.price} × ${item.qty} = SR ${lineTotal(item)}`
